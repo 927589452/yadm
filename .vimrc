@@ -31,6 +31,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "   " Unmanaged plugin (manually installed and updated)
 "   Plug '~/my-prototype-plugin'
 "
+Plug 'vim-scripts/c.vim'
+
 "   " Initialize plugin system
 call plug#end()
 		"
