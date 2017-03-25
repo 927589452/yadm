@@ -18,6 +18,10 @@ set $term urxvt
 # Your preferred application launcher
 set $menu dmenu_run
 
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+font pango:DejaVu Sans Mono 6
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/sway/)
@@ -96,30 +100,42 @@ output * bg /usr/share/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Workspaces:
 #
-    # switch to workspace
-    bindsym $mod+1 workspace 1
-    bindsym $mod+2 workspace 2
-    bindsym $mod+3 workspace 3
-    bindsym $mod+4 workspace 4
-    bindsym $mod+5 workspace 5
-    bindsym $mod+6 workspace 6
-    bindsym $mod+7 workspace 7
-    bindsym $mod+8 workspace 8
-    bindsym $mod+9 workspace 9
-    bindsym $mod+0 workspace 10
-    # move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace 1
-    bindsym $mod+Shift+2 move container to workspace 2
-    bindsym $mod+Shift+3 move container to workspace 3
-    bindsym $mod+Shift+4 move container to workspace 4
-    bindsym $mod+Shift+5 move container to workspace 5
-    bindsym $mod+Shift+6 move container to workspace 6
-    bindsym $mod+Shift+7 move container to workspace 7
-    bindsym $mod+Shift+8 move container to workspace 8
-    bindsym $mod+Shift+9 move container to workspace 9
-    bindsym $mod+Shift+0 move container to workspace 10
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
+##Workspace Names
+set $workspace1 "1: www"
+set $workspace2 "2: term"
+set $workspace3 "3: im"
+set $workspace4 "4: dev"
+set $workspace5 "5: shopping"
+set $workspace6 "6: random"
+set $workspace7 "7: gaming"
+set $workspace8 "8: mail"
+set $workspace9 "9: music"
+set $workspace10 "10: www"
+
+# switch to workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
 #
 # Layout stuff:
 #
@@ -182,6 +198,20 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+
+#######################################################################
+#Colors
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
+
+######################################################################
+
 #
 # Status Bar:
 #
@@ -194,5 +224,24 @@ bar {
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
 }
+
+
+#software preferences
+##personal autostart
+exec_always .dotfiles/i3/wallpaper.sh
+exec chrome
+exec firefox -no-remote -profile '/usr/home/jens/.mozilla/firefox/griaj53s.sports'
+exec firefox -no-remote -profile '/usr/home/jens/.mozilla/firefox/rcahm42x.crafts'
+exec firefox -no-remote -profile '/usr/home/jens/.mozilla/firefox/7zt02635.default'
+
+##personal sorting
+#www
+assign [class="Firefox"] $workspace1
+assign [class="Chromium-browser"] $workspace1
+
+#im
+assign [class="Mumble"] $workspace3
+#mail
+assign [class="Seahorse"] $workspace8
 
 include /etc/sway/config.d/*
