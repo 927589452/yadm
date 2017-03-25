@@ -11,3 +11,5 @@ PS1='[\u@\h \W]\$ '
 BROWSER=/usr/bin/chromium
 EDITOR=/usr/bin/nano
 # <<< END ADDED BY CNCHI INSTALLER
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
