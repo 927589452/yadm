@@ -44,6 +44,12 @@ output * bg /usr/share/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #       middle_emulation enabled
 #   }
 #
+input "2:14:ETPS\/2_Elantech_Touchpad" {
+	dwt enabled
+	tab enabled
+	natural_scroll enabled
+	middle_emulation enabled
+}
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # The escape symbol "\" has to be removed.
 # Read `man 5 sway-input` for more information about this section.
@@ -225,6 +231,9 @@ bar {
     }
 }
 
+bar {
+    status_command i3status
+}
 
 #software preferences
 ##personal autostart
