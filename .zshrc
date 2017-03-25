@@ -53,7 +53,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git archlinux sudo battery)
+plugins=(git archlinux sudo battery ansible)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -76,8 +76,10 @@ export LANG=de_DE.UTF-8
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
- export SSH_KEY_PATH="~/.ssh/rsa_id"
-
+ export SSH_KEY_PATH="~/.ssh/antergos"
+#KBD
+ export XKB_DEFAULT_LAYOUT=de
+ export XKB_DEFAULT_VARIANT=nodeadkeys 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
