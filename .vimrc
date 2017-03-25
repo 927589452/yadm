@@ -2,6 +2,9 @@ call plug#begin('~/.vim/plugged')
 "
 "   " Make sure you use single quotes
 "
+
+Plug 'powerline/powerline', { 'rtp': 'powerline/bindings/vim' }
+
 Plug 'lervag/vimtex'
 "   " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
