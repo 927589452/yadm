@@ -1,0 +1,10 @@
+/bin/sh
+
+sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+mkdir -p ~/Development 
+cd Development
+git remote add origin git@github.com:927589452/cprogramming.git
+git push -u origin master
+
+
