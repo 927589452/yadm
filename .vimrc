@@ -2,7 +2,7 @@ call plug#begin('~/.vim/plugged')
 "
 "   " Make sure you use single quotes
 "
-
+Plug 'pearofducks/ansible-vim'
 Plug 'powerline/powerline', { 'rtp': 'powerline/bindings/vim' }
 
 Plug 'lervag/vimtex'
