@@ -74,6 +74,9 @@ source $ZSH/oh-my-zsh.sh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
+export XKB_DEFAULT_LAYOUT=de,us
+export XKB_DEFAULT_VARIANT=nodeadkeys,
+export XKB_DEFAULT_OPTIONS=grp:alt_shift_toggle,
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -83,3 +86,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vi="vim"
+
