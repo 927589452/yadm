@@ -1,0 +1,7 @@
+cd 
+
+mkdir defaults
+mv %s defaults/
+shell mv %s defaults/
+shell vim
+shell echo $EDITOR
