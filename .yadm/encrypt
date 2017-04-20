@@ -1,0 +1,5 @@
+.ssh/*.key
+.gnupg/*.gpg
+.ssh/config
+.gitconfig
+.mutt/*
