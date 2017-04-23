@@ -135,9 +135,9 @@ autocmd FileType html inoremap ;ol <ol><Enter><li></li><Enter></ol><Enter><Enter
 """END
 
 """.bib
-autocmd FileType bib inoremap ;a @article{<Enter><Tab>author<Space>=<Space>"(<>)",<Enter><Tab>year<Space>=<Space>"(<>)",<Enter><Tab>title<Space>=<Space>"(<>)",<Enter><Tab>journal<Space>=<Space>"(<>)",<Enter><Tab>volume<Space>=<Space>"(<>)",<Enter><Tab>pages<Space>=<Space>"(<>)",<Enter><Tab>}<Enter>(<>)<Esc>8kA,<Esc>i
-autocmd FileType bib inoremap ;b @book{<Enter><Tab>author<Space>=<Space>"(<>)",<Enter><Tab>year<Space>=<Space>"(<>)",<Enter><Tab>title<Space>=<Space>"(<>)",<Enter><Tab>publisher<Space>=<Space>"(<>)",<Enter><Tab>}<Enter>(<>)<Esc>6kA,<Esc>i
-autocmd FileType bib inoremap ;c @incollection{<Enter><Tab>author<Space>=<Space>"(<>)",<Enter><Tab>title<Space>=<Space>"(<>)",<Enter><Tab>booktitle<Space>=<Space>"(<>)",<Enter><Tab>editor<Space>=<Space>"(<>)",<Enter><Tab>year<Space>=<Space>"(<>)",<Enter><Tab>publisher<Space>=<Space>"(<>)",<Enter><Tab>}<Enter>(<>)<Esc>8kA,<Esc>i
+autocmd FileType bib inoremap ;a @article{<Enter><>author<Space>=<Space>"(<>)",<Enter><>year<Space>=<Space>"(<>)",<Enter><>title<Space>=<Space>"(<>)",<Enter><>journal<Space>=<Space>"(<>)",<Enter><>volume<Space>=<Space>"(<>)",<Enter><>pages<Space>=<Space>"(<>)",<Enter><>}<Enter>(<>)<Esc>8kA,<Esc>i
+autocmd FileType bib inoremap ;b @book{<Enter><>author<Space>=<Space>"(<>)",<Enter><>year<Space>=<Space>"(<>)",<Enter><>title<Space>=<Space>"(<>)",<Enter><>publisher<Space>=<Space>"(<>)",<Enter><>}<Enter>(<>)<Esc>6kA,<Esc>i
+autocmd FileType bib inoremap ;c @incollection{<Enter><>author<Space>=<Space>"(<>)",<Enter><>title<Space>=<Space>"(<>)",<Enter><>booktitle<Space>=<Space>"(<>)",<Enter><>editor<Space>=<Space>"(<>)",<Enter><>year<Space>=<Space>"(<>)",<Enter><>publisher<Space>=<Space>"(<>)",<Enter><>}<Enter>(<>)<Esc>8kA,<Esc>i
 """END
 
 
