@@ -36,6 +36,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "
 Plug 'vim-scripts/c.vim'
 
+
+Plug 'jreybert/vimagit'
 "   " Initialize plugin system
 call plug#end()
 "
@@ -102,6 +104,20 @@ autocmd FileType tex inoremap ;nu $\varnothing$
 autocmd FileType tex inoremap ;col \begin{columns}[T]<Enter>\begin{column}{.5\textwidth}<Enter><Enter>\end{column}<Enter>\begin{column}{.5\textwidth}<Enter>(<>)<Enter>\end{column}<Enter>\end{columns}<Esc>5kA
 """END
 
+"""Math Stuff
+autocmd FileType tex inoremap ;arr \begin{array}{<Space>(<>)}
+autocmd FileType tex inoremap ;bmat \begin{bmatrix}
+autocmd FileType tex inoremap ;pmat \begin{pmatrix}
+autocmd FileType tex inoremap ;lem \begin{lem}[<Space>(<>)]<Enter>(<>)<Esc>2ki
+autocmd FileType tex inoremap ;def \begin{defn}[<Space>(<>)]<Enter>(<>)<Esc>2ki
+autocmd FileType tex inoremap ;pro \begin{propt}[<Space>(<>)]<Enter>(<>)<Esc>2ki
+autocmd FileType tex inoremap ;bsp \begin{bsp}[<Space>(<>)]<Enter>(<>)<Esc>2ki
+autocmd FileType tex inoremap ;kor \begin{kor}[<Space>(<>)]<Enter>(<>)<Esc>2ki
+autocmd FileType tex inoremap ;satz \begin{satz}[<Space>(<>)]<Enter>(<>)<Esc>2ki
+autocmd FileType tex inoremap ;bem \begin{bem}[<Space>(<>)]<Enter>(<>)<Esc>2ki
+
+
+
 """Logical Symbols
 autocmd FileType tex inoremap ;m $$<Space>(<>)<Esc>2T$i
 autocmd FileType tex inoremap ;M $$<Esc>i
@@ -110,9 +126,9 @@ autocmd FileType tex inoremap ;V {\vee}
 autocmd FileType tex inoremap ;or {\vee}
 autocmd FileType tex inoremap ;L {\wedge}
 autocmd FileType tex inoremap ;and {\wedge}
-autocmd FileType tex inoremap ;ra {\rightarrow}
-autocmd FileType tex inoremap ;la {\leftarrow}
-autocmd FileType tex inoremap ;lra {\leftrightarrow}
+autocmd FileType tex inoremap ;ra {\Rightarrow}
+autocmd FileType tex inoremap ;la {\Leftarrow}
+autocmd FileType tex inoremap ;lra {\Leftrightarrow}
 autocmd FileType tex inoremap ;fa {\forall}
 autocmd FileType tex inoremap ;ex {\exists}
 autocmd FileType tex inoremap ;dia	{\Diamond}
@@ -135,11 +151,15 @@ autocmd FileType html inoremap ;ol <ol><Enter><li></li><Enter></ol><Enter><Enter
 """END
 
 """.bib
-autocmd FileType bib inoremap ;a @article{<Enter><>author<Space>=<Space>"(<>)",<Enter><>year<Space>=<Space>"(<>)",<Enter><>title<Space>=<Space>"(<>)",<Enter><>journal<Space>=<Space>"(<>)",<Enter><>volume<Space>=<Space>"(<>)",<Enter><>pages<Space>=<Space>"(<>)",<Enter><>}<Enter>(<>)<Esc>8kA,<Esc>i
-autocmd FileType bib inoremap ;b @book{<Enter><>author<Space>=<Space>"(<>)",<Enter><>year<Space>=<Space>"(<>)",<Enter><>title<Space>=<Space>"(<>)",<Enter><>publisher<Space>=<Space>"(<>)",<Enter><>}<Enter>(<>)<Esc>6kA,<Esc>i
-autocmd FileType bib inoremap ;c @incollection{<Enter><>author<Space>=<Space>"(<>)",<Enter><>title<Space>=<Space>"(<>)",<Enter><>booktitle<Space>=<Space>"(<>)",<Enter><>editor<Space>=<Space>"(<>)",<Enter><>year<Space>=<Space>"(<>)",<Enter><>publisher<Space>=<Space>"(<>)",<Enter><>}<Enter>(<>)<Esc>8kA,<Esc>i
+autocmd FileType bib inoremap ;a @article{<Enter>author<Space>=<Space>{(<>)},<Enter>year<Space>=<Space>{(<>)},<Enter>title<Space>=<Space>{(<>)},<Enter>journal<Space>=<Space>{(<>)},<Enter>volume<Space>=<Space>{(<>)},<Enter>pages<Space>=<Space>{(<>)},<Enter>}<Enter>(<>)<Esc>8kA,<Esc>i
+autocmd FileType bib inoremap ;b @book{<Enter>author<Space>=<Space>{(<>)},<Enter>year<Space>=<Space>{(<>)},<Enter>title<Space>=<Space>{(<>)},<Enter>publisher<Space>=<Space>{(<>)},<Enter>}<Enter>(<>)<Esc>6kA,<Esc>i
+autocmd FileType bib inoremap ;c @incollection{<Enter>author<Space>=<Space>{(<>)},<Enter>title<Space>=<Space>{(<>)},<Enter>booktitle<Space>=<Space>{(<>)},<Enter>editor<Space>=<Space>{(<>)},<Enter>year<Space>=<Space>{(<>)},<Enter>publisher<Space>=<Space>{(<>)},<Enter>}<Enter>(<>)<Esc>8kA,<Esc>i
 """END
 
 
 au BufWinLeave * mkview
 au BufWinEnter * silent loadview
+
+
+"""vimtex
+let g:vimtex_view_method = 'mupdf'
