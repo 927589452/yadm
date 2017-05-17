@@ -83,7 +83,7 @@ autocmd FileType tex inoremap ;x \begin{xlist}<Enter>\ex<Space><Enter>\end{xlist
 autocmd FileType tex inoremap ;ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter>(<>)<Esc>3kA\item<Space>
 autocmd FileType tex inoremap ;ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter>(<>)<Esc>3kA\item<Space>
 autocmd FileType tex inoremap ;ref \ref{}<Space>(<>)<Esc>T{i
-autocmd FileType tex inoremap ;t \begin{tabular}<Enter>(<>)<Enter>\end{tabular}<Enter><Enter>(<>)<Esc>4kA{}<Esc>i
+autocmd FileType tex inoremap ;ta \begin{tabular}<Enter>(<>)<Enter>\end{tabular}<Enter><Enter>(<>)<Esc>4kA{}<Esc>i
 autocmd FileType tex inoremap ;tab \begin{tableau}<Enter>\inp{(<>)}<Tab>\const{(<>)}<Tab>(<>)<Enter>(<>)<Enter>\end{tableau}<Enter><Enter>(<>)<Esc>5kA{}<Esc>i
 autocmd FileType tex inoremap ;can \cand{}<Tab>(<>)<Esc>T{i
 autocmd FileType tex inoremap ;con \const{}<Tab>(<>)<Esc>T{i
@@ -113,6 +113,7 @@ autocmd FileType tex inoremap ;def \begin{defn}[<Space>(<>)]<Enter>(<>)<Esc>2ki
 autocmd FileType tex inoremap ;pro \begin{propt}[<Space>(<>)]<Enter>(<>)<Esc>2ki
 autocmd FileType tex inoremap ;bsp \begin{bsp}[<Space>(<>)]<Enter>(<>)<Esc>2ki
 autocmd FileType tex inoremap ;kor \begin{kor}[<Space>(<>)]<Enter>(<>)<Esc>2ki
+autocmd FileType tex inoremap ;thm \begin{thm}[<Space>(<>)]<Enter>(<>)<Esc>2ki
 autocmd FileType tex inoremap ;satz \begin{satz}[<Space>(<>)]<Enter>(<>)<Esc>2ki
 autocmd FileType tex inoremap ;bem \begin{bem}[<Space>(<>)]<Enter>(<>)<Esc>2ki
 
