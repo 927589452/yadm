@@ -53,7 +53,7 @@ ZSH_THEME="random"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git ssh-agent)
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa2 id_github antergos 
+zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa2 id_github antergos thinkpad_jens id_rsa_git mobile_ssh
 
 source $ZSH/oh-my-zsh.sh
 
