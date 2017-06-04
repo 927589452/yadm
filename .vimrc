@@ -41,6 +41,17 @@ Plug 'jreybert/vimagit'
 "   " Initialize plugin system
 call plug#end()
 "
+
+
+"hightlitghint add spectial chars
+set listchars=nbsp:¬,eol:¶,tab:>-,extends:»,precedes:«,trail:•
+set list
+
+"http://is.gd/IBV2013
+highlight ColorColumn ctermbg=magenta
+"set colorcolumn=81
+call matchadd('ColorColumn', '\%81v', 100) 
+
 "http://www.lukesmith.xyz/conf/.vimrc
 set number
 set relativenumber
