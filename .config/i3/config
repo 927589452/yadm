@@ -244,12 +244,14 @@ bar {
     	status_command i3status
 }
 #custom shortcuts
-bindsym Ctrl+Shift+l  exec scripts/lock.sh 
+bindsym $mod+Ctrl+l  exec ~/scripts/lock.sh 
 #software preferences
 ##personal autostart
 exec_always .dotfiles/i3/wallpaper.sh
 exec_always redshift -l  50.01:8.47  
 exec chrome
+exec firefox
+exec google-chrome-stable
 exec firefox -no-remote -profile 'sports'
 exec firefox -no-remote -profile 'crafts'
 exec firefox -no-remote -profile 'default'
@@ -264,6 +266,7 @@ assign [class="Midori"] $workspace1
 
 #im
 assign [class="Mumble"] $workspace3
+assign [class="discord"] $workspace3
 
 #mail
 assign [class="Seahorse"] $workspace8
