@@ -43,9 +43,13 @@ call plug#end()
 "
 
 
-"hightlitghint add spectial chars
+"hightlitg hint add spectial chars
 set listchars=nbsp:¬,eol:¶,tab:>-,extends:»,precedes:«,trail:•
 set list
+"indentation
+set tabstop=8
+
+
 
 "http://is.gd/IBV2013
 highlight ColorColumn ctermbg=magenta
@@ -60,7 +64,7 @@ set so=10
 """BASIC TOOLS
 "Navigating with guides
 inoremap <Space><Space> <Esc>/(<>)<Enter>"_c4l
-inoremap <Space><Backspace> (<>)<Esc>/(<>)<Enter>"_c4l
+"inoremap <Space><Backspace> (<>)<Esc>/(<>)<Enter>"_c4l
 vnoremap <Space><Space> <Esc>/(<>)<Enter>"_c4l
 map <Space><Space> <Esc>/(<>)<Enter>"_c4l
 inoremap ;gui (<>)
@@ -128,6 +132,7 @@ autocmd FileType tex inoremap ;thm \begin{thm}[<Space>(<>)]<Enter>(<>)<Esc>2ki
 autocmd FileType tex inoremap ;satz \begin{satz}[<Space>(<>)]<Enter>(<>)<Esc>2ki
 autocmd FileType tex inoremap ;bem \begin{bem}[<Space>(<>)]<Enter>(<>)<Esc>2ki
 
+autocmd FileType tex inoremap ;nota \begin{nota}[<Space>(<>)]<Enter>(<>)<Esc>2ki
 
 
 """Logical Symbols
