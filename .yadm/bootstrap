@@ -7,7 +7,7 @@ which vim
 
 #basic setup
 mkdir -p .ssh/control
-ssh-keygen -i ~/.ssh/id_$(hostname)
+find ~/.ssh/id_$(hostname) || ssh-keygen -i ~/.ssh/id_$(hostname)
 yadm decrypt
 
 
