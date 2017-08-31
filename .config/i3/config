@@ -244,7 +244,7 @@ bar {
     	status_command i3status
 }
 #custom shortcuts
-bindsym Ctrl+Shift+l  exec scripts/lock.sh 
+bindsym $mod+Shift+l  exec scripts/lock.sh 
 #software preferences
 ##personal autostart
 exec_always .dotfiles/i3/wallpaper.sh

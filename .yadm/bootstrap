@@ -1,9 +1,28 @@
 #!/bin/sh
 
-$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)
+#check installed software
+which git
+which zsh
+which vim
 
+#basic setup
+mkdir -p .ssh/control
+ssh-keygen -i ~/.ssh/id_$(hostname)
+yadm decrypt
+
+
+#configure zsh 
+export tmp=$RANDOM
+mv ~/.zshrc ~/zshrc.$tmp
+echo "Created temporary copy of the zshrc"
+$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -) && echo "Cloned oh-my-zsh successfully" || echo "Cloning oh-my-zsh was unsuccessfull"	
+mv ~/zshrc.$tmp ~/.zshrc 
+echo "Moved zshrc back in place"
+
+#configure vim
 curl -fLo .vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+#Clone Projects from internal git and where exists add git{hub|lab} as a remote
 mkdir -p ~/Development 
 cd Development
 git clone https://github.com/927589452/cprogramming.git
