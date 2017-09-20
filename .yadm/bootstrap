@@ -2,20 +2,47 @@
 
 #check installed software
 which git
+
 which zsh
+
 which vim
+
 which ssh-agent
+
+#TODO automate install
 which virtualenv 
+
 which i3
 which i3lock
+
 which ranger
+
+#TODO automate install
+which pip
+
+#TODO rethink if needed here
 which pipsi
 
+#TODO use either _wget_ or _curl_ !
+which curl
+which wget
+
+which cmus
+
 #basic setup
+#ssh setup
 mkdir -p .ssh/control
+#make find -type D -empty -exec rmdir {} ';' not match the socket directory
 touch .ssh/control/.donotdelete
 find ~/.ssh/id_$(hostname) || ssh-keygen -i ~/.ssh/id_$(hostname)
-yadm decrypt
+#yadm setup
+#find a common location for git installs
+git clone https://github.com/TheLocehiliosan/yadm.git ~/.yadm-project
+ln -s ~/.yadm-project/yadm ~/bin/yadm
+yadm clone https://github.com/927589452/yadm 
+yadm remote set-url --push ssh://git@github.com/927589452/yadm.git github
+
+yadm decrypt && yadm encrypt
 
 
 #configure zsh 
@@ -26,8 +53,15 @@ $(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O 
 mv ~/zshrc.$tmp ~/.zshrc 
 echo "Moved zshrc back in place"
 
-#configure vim
-curl -fLo .vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+#configure vimplug
+curl -fLo .vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && echo "vimplug installed
+Open a new terminal
+run vim
+:PlugInstall
+:PlugUpdate
+:PlugUpgrade
+"
+read "press enter when vim plugins have been installed"
 
 #Clone Projects from internal git and where exists add git{hub|lab} as a remote
 mkdir -p ~/Development 
@@ -36,10 +70,14 @@ cd Development && git clone https://github.com/927589452/cprogramming.git
 
 #configure i3 dependencies
 mdkir ~/bin
-cd ~/bin && git clone git://github.com/tobi-wan-kenobi/bumblebee-status
+cd ~/bin && git clone git://github.com/tobi-wan-kenobi/bumblebee-status 
+which cmus || echo "cmus is required by the status bar"
 
 #install pipsi
+pip install --upgrade pip
 pip install --user --ignore-installed pipsi
+pip install --upgrade --user pipsi
+which pipsi || echo "It seems pipsi isn't installed"
 
 #mail cal addresses
 #https://github.com/pimutils/vdirsyncer
@@ -49,3 +87,5 @@ pipsi install --python python3 khal
 #https://github.com/scheibler/khard
 pipsi install --python python3 khard
 echo "configured mail and cal setup"
+
+yadm decrypt && yadm encrypt
