@@ -4,9 +4,16 @@
 which git
 which zsh
 which vim
+which ssh-agent
+which virtualenv 
+which i3
+which i3lock
+which ranger
+which pipsi
 
 #basic setup
 mkdir -p .ssh/control
+touch .ssh/control/.donotdelete
 find ~/.ssh/id_$(hostname) || ssh-keygen -i ~/.ssh/id_$(hostname)
 yadm decrypt
 
@@ -24,7 +31,21 @@ curl -fLo .vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com
 
 #Clone Projects from internal git and where exists add git{hub|lab} as a remote
 mkdir -p ~/Development 
-cd Development
-git clone https://github.com/927589452/cprogramming.git
+cd Development && git clone https://github.com/927589452/cprogramming.git
 
 
+#configure i3 dependencies
+mdkir ~/bin
+cd ~/bin && git clone git://github.com/tobi-wan-kenobi/bumblebee-status
+
+#install pipsi
+pip install --user --ignore-installed pipsi
+
+#mail cal addresses
+#https://github.com/pimutils/vdirsyncer
+pipsi install --python python3 vdirsyncer
+#https://github.com/pimutils/khal
+pipsi install --python python3 khal
+#https://github.com/scheibler/khard
+pipsi install --python python3 khard
+echo "configured mail and cal setup"
