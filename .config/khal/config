@@ -1,0 +1,15 @@
+[calendars]
+[[personal]]
+path=~/.calendar/927589452_de/*
+type=discover
+
+[[bdsm]]
+path=~/.calendar/927589452_com/*
+type=discover
+
+[locale]
+timeformat = %H:%M
+dateformat = %Y-%m-%d
+longdateformat = %Y-%m-%d
+datetimeformat = %Y-%m-%d %H:%M
+longdatetimeformat = %Y-%m-%d %H:%M
