@@ -3,3 +3,6 @@
 .ssh/config
 .gitconfig
 .mutt/*
+.config/vdirsyncer/config
+.msmtprc
+.offlineimaprc

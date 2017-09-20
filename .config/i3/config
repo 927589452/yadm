@@ -235,7 +235,7 @@ bar {
 	font pango:Inconsolata 7
 	position top
 	tray_output none
-	status_command bumblebee-status -f ~/bumblee.log -d -m cmus brightness nic traffic disk:root cpu memory battery weather date time pasink pasource pacman -p time.format="%H:%M CW %V" date.format="%a, %b %d %Y" -t solarized-powerline
+	status_command ~/bin/bumblebee-status/bumblebee-status -f ~/bumblee.log -d -m cmus brightness nic traffic disk:root cpu memory battery weather date time pasink pasource pacman -p time.format="%H:%M CW %V" date.format="%a, %b %d %Y" -t solarized-powerline
 }
 
 
@@ -244,15 +244,20 @@ bar {
     	status_command i3status
 }
 #custom shortcuts
-bindsym Ctrl+Shift+l  exec scripts/lock.sh 
+bindsym $mod+Ctrl+l  exec ~/scripts/lock.sh 
 #software preferences
 ##personal autostart
 exec_always .dotfiles/i3/wallpaper.sh
 exec_always redshift -l  50.01:8.47  
 exec chrome
+exec chromium-browser
+exec firefox
+exec google-chrome-stable
 exec firefox -no-remote -profile 'sports'
 exec firefox -no-remote -profile 'crafts'
 exec firefox -no-remote -profile 'default'
+which mate-power-manager && exec mate-power-manager
+
 
 ##personal sorting
 #www
@@ -264,6 +269,7 @@ assign [class="Midori"] $workspace1
 
 #im
 assign [class="Mumble"] $workspace3
+assign [class="discord"] $workspace3
 
 #mail
 assign [class="Seahorse"] $workspace8

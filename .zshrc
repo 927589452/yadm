@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.venv/bin:$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -53,7 +53,7 @@ ZSH_THEME="random"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git ssh-agent)
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa2 id_github antergos thinkpad_jens id_rsa_git mobile_ssh
+zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa2 id_github antergos thinkpad_jens id_rsa_git mobile_ssh id_pine64 
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,3 +91,5 @@ export XKB_DEFAULT_OPTIONS=grp:alt_shift_toggle,
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vi="vim"
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
