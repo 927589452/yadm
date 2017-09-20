@@ -1,8 +1,13 @@
 .ssh/*.key
 .gnupg/*.gpg
+#sync configuration of jumphosts proxies etc
+#research if it can be splitted
 .ssh/config
 .gitconfig
 .mutt/*
+#sync calendars and contacts
 .config/vdirsyncer/config
-.msmtprc
-.offlineimaprc
+#send mail
+~/.msmtprc
+#get mail
+~/.offlineimaprc
