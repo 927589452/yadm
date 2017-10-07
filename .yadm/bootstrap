@@ -40,9 +40,9 @@ find ~/.ssh/id_$(hostname) || ssh-keygen -i ~/.ssh/id_$(hostname)
 git clone https://github.com/TheLocehiliosan/yadm.git ~/.yadm-project
 ln -s ~/.yadm-project/yadm ~/bin/yadm
 yadm clone https://github.com/927589452/yadm 
-yadm remote set-url --push ssh://git@github.com/927589452/yadm.git github
+yadm remote set-url --push ssh://git@github.com/927589452/yadm.git origin
 
-yadm decrypt && yadm encrypt
+yadm decrypt && yadm encrypt && yadm commit .yadm/files.gpg -m "Updated files" && yadm push
 
 
 #configure zsh 
@@ -60,8 +60,9 @@ run vim
 :PlugInstall
 :PlugUpdate
 :PlugUpgrade
-"
-read "press enter when vim plugins have been installed"
+
+press enter when vim plugins have been installed"
+read $RANDOM
 
 #Clone Projects from internal git and where exists add git{hub|lab} as a remote
 mkdir -p ~/Development 
@@ -72,6 +73,7 @@ cd Development && git clone https://github.com/927589452/cprogramming.git
 mdkir ~/bin
 cd ~/bin && git clone git://github.com/tobi-wan-kenobi/bumblebee-status 
 which cmus || echo "cmus is required by the status bar"
+which redshift || echo "redshift is required by the status bar"
 
 #install pipsi
 pip install --upgrade pip
