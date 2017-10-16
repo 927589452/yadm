@@ -257,7 +257,7 @@ exec firefox -no-remote -profile 'sports'
 exec firefox -no-remote -profile 'crafts'
 exec firefox -no-remote -profile 'default'
 exec mate-power-manager
-
+exec mate-volume-control-applet
 
 ##personal sorting
 #www
