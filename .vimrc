@@ -78,7 +78,7 @@ inoremap wj <Esc>
 inoremap <C-s> <Esc>:w!<Enter>i
 nnoremap <C-s> :w!<Enter>
 "Spell-check set to F7
-map <F7> :setlocal spell! spelllang=en_us<CR>
+map <F7> :setlocal spell! spelllang=de_DE<CR>
 """END
 
 
