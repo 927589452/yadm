@@ -1,10 +1,10 @@
 [calendars]
 [[personal]]
-path=~/.calendar/927589452_de/*
+path = ~/.calendar/927589452_de/*
 type=discover
 
 [[bdsm]]
-path=~/.calendar/927589452_com/*
+path = ~/.calendar/927589452_com/*
 type=discover
 
 [locale]
