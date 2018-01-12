@@ -139,7 +139,8 @@ autocmd FileType tex inoremap ;nota \begin{nota}[<Space>(<>)]<Enter>(<>)<Esc>2ki
 
 
 """Logical Symbols
-autocmd FileType tex inoremap ;m $$<Space>(<>)<Esc>2T$i
+"autocmd FileType tex inoremap ;m $$<Space>(<>)<Esc>2T$i
+autocmd FileType tex inoremap ;m \begin{math}<Enter>
 autocmd FileType tex inoremap ;M $$<Esc>i
 autocmd FileType tex inoremap ;neg {\neg}
 autocmd FileType tex inoremap ;V {\vee}
