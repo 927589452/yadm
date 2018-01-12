@@ -235,7 +235,7 @@ bar {
 	font pango:Inconsolata 7
 	position top
 	tray_output none
-	status_command ~/bin/bumblebee-status/bumblebee-status -f /dev/null  -m cmus brightness nic traffic disk:root cpu memory battery weather date time pasink pasource pacman -p time.format="%H:%M CW %V" date.format="%a, %b %d %Y" -t solarized-powerline
+	status_command ~/bin/bumblebee-status/bumblebee-status  -m cmus brightness nic traffic disk:root cpu memory battery weather date time pasink pasource pacman -p time.format="%H:%M CW %V" date.format="%a, %b %d %Y" -t solarized-powerline -f /dev/null -d
 }
 
 
@@ -245,6 +245,9 @@ bar {
 }
 #custom shortcuts
 bindsym $mod+Ctrl+l  exec ~/scripts/lock.sh 
+bindsym Ctrl+Shift+u  exec sudo /usr/local/sbin/lcd_bright.sh U 10
+bindsym Ctrl+Shift+d  exec sudo /usr/local/sbin/lcd_bright.sh D 10
+
 #software preferences
 ##personal autostart
 exec_always .dotfiles/i3/wallpaper.sh
@@ -258,6 +261,7 @@ exec firefox -no-remote -profile 'crafts'
 exec firefox -no-remote -profile 'default'
 exec mate-power-manager
 exec mate-volume-control-applet
+exec blueman-assistant
 
 ##personal sorting
 #www

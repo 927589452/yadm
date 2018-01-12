@@ -1,5 +1,5 @@
 .ssh/*.key
-.gnupg/*.gpg
+#.gnupg/*.gpg
 #sync configuration of jumphosts proxies etc
 #research if it can be splitted
 .ssh/config
@@ -11,3 +11,6 @@
 ~/.msmtprc
 #get mail
 ~/.offlineimaprc
+#IRC settings
+~/.irssi*
+~/irclogs
