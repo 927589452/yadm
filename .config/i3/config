@@ -245,8 +245,8 @@ bar {
 }
 #custom shortcuts
 bindsym $mod+Ctrl+l  exec ~/scripts/lock.sh 
-bindsym Ctrl+Shift+u  exec sudo /usr/local/sbin/lock.sh U 10
-bindsym Ctrl+Shift+d  exec sudo /usr/local/sbin/lock.sh D 10
+bindsym Ctrl+Shift+u  exec sudo /usr/local/sbin/lcd_bright.sh U 10
+bindsym Ctrl+Shift+d  exec sudo /usr/local/sbin/lcd_bright.sh D 10
 
 #software preferences
 ##personal autostart
