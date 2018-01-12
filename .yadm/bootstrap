@@ -42,7 +42,6 @@ ln -s ~/.yadm-project/yadm ~/bin/yadm
 yadm clone https://github.com/927589452/yadm 
 yadm remote set-url --push ssh://git@github.com/927589452/yadm.git origin
 
-yadm decrypt && yadm encrypt && yadm commit .yadm/files.gpg -m "Updated files" && yadm push
 
 
 #configure zsh 
