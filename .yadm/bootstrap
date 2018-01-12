@@ -98,3 +98,5 @@ echo "configured mail and cal setup"
 #configure ranger
 
 #copy defaults
+
+#link scripts
