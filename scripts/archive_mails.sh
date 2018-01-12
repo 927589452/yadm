@@ -1,11 +1,11 @@
 #!/bin/bash
 MAILS="/usr/home/Mail"
-ARCHIVEDIR="~/Archive/"
+ARCHIVEDIR=~/Archive/
 AGE="+180"
 
 cd $MAILS
 # find mails oder then 200 days
-find . -mtime $AGE -type f >> move_list.txt
+find . -mtime $AGE -type f > move_list.txt
 # clone structure
 rsync -av -f"+ */" -f"- *" . $ARCHIVEDIR
 # move mails
