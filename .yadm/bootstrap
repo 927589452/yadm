@@ -38,6 +38,8 @@ find ~/.ssh/id_$(hostname) || ssh-keygen -i ~/.ssh/id_$(hostname)
 #yadm setup
 #find a common location for git installs
 git clone https://github.com/TheLocehiliosan/yadm.git ~/.yadm-project
+ls ~/bin >/dev/null || mkdir ~/bin
+PATH
 ln -s ~/.yadm-project/yadm ~/bin/yadm
 yadm clone https://github.com/927589452/yadm 
 yadm remote set-url --push ssh://git@github.com/927589452/yadm.git origin
