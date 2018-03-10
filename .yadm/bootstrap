@@ -34,7 +34,7 @@ which cmus
 mkdir -p .ssh/control
 #make find -type D -empty -exec rmdir {} ';' not match the socket directory
 touch .ssh/control/.donotdelete
-find ~/.ssh/id_$(hostname) || ssh-keygen -i ~/.ssh/id_$(hostname)
+find ~/.ssh/id_$(hostname) || ssh-keygen -f ~/.ssh/id_$(hostname)
 #yadm setup
 #find a common location for git installs
 git clone https://github.com/TheLocehiliosan/yadm.git ~/.yadm-project
