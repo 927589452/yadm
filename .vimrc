@@ -184,3 +184,8 @@ au BufWinEnter * silent loadview
 
 """vimtex
 let g:vimtex_view_method = 'mupdf'
+
+""https://stackoverflow.com/questions/526858/how-do-i-make-vim-do-normal-bash-like-tab-completion-for-file-names#526940
+set wildmode=longest,list,full
+set wildmenu
+
