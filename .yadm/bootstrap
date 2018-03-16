@@ -48,15 +48,13 @@ cd Development && git clone https://github.com/927589452/cprogramming.git
 
 #configure i3 dependencies
 mdkir ~/bin
-cd ~/bin && git clone git://github.com/tobi-wan-kenobi/bumblebee-status 
-which cmus || echo "cmus is required by the status bar"
-which redshift || echo "redshift is required by the status bar"
+cd ~ && git clone git://github.com/tobi-wan-kenobi/bumblebee-status 
+ln -s ~/bumblebee-status/bumblebee-status ~/bin/bumblebee-status
 
 #install pipsi
 pip install --upgrade pip
 pip install --user --ignore-installed pipsi
 pip install --upgrade --user pipsi
-which pipsi || echo "It seems pipsi isn't installed"
 
 #mail cal addresses
 #https://github.com/pimutils/vdirsyncer
