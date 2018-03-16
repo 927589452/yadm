@@ -26,7 +26,7 @@ yadm remote set-url --push ssh://git@github.com/927589452/yadm.git origin
 export tmp=$RANDOM
 mv ~/.zshrc ~/zshrc.$tmp
 echo "Created temporary copy of the zshrc"
-$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -) && echo "Cloned oh-my-zsh successfully" || echo "Cloning oh-my-zsh was unsuccessfull"	
+git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh && echo "Cloned oh-my-zsh successfully" || echo "Cloning oh-my-zsh was unsuccessfull"	
 mv ~/zshrc.$tmp ~/.zshrc 
 echo "Moved zshrc back in place"
 
