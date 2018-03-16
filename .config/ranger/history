@@ -1,28 +1,5 @@
-cd 
-mkdir defaults
-mv %s defaults/
-shell mv %s defaults/
-shell vim
-shell echo $EDITOR
-mkdir 927589452-ansible-bind-caching
-shell git init
-shell vi README.md
-mkdir roles
-mkdir bind-caching
-mkdir tasks
-shell cp %%s .
-shell cp %%s /home/jens/Development/927589452-ansible-bind-caching/roles/bind-caching/tasks/
-a
-create
-touch Codes.tex
-delete %s
-shell cp ~/Documents/latex/article.tex Codes.tex
-shell cp ~/Documents/latex/Article.tex Codes.tex
-shell cp ~/Documents/latex/article.tex Uebungen_KommutativeAlgebra.tex
-shell cp ~/Documents/latex/Article.tex Uebungen_KommutativeAlgebra.tex
-rename article.tex
-cd .config/
-cd .local/share/keyrings/
 
-open_with 
-rename user2.keystore
+cd .config/ranger
+show-hidden
+set show_hidden
+set show_hidden=1
