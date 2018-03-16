@@ -58,13 +58,13 @@ pip install --upgrade --user pipsi
 
 #mail cal addresses
 #https://github.com/pimutils/vdirsyncer
-pipsi install --python python3 vdirsyncer
+pipsi install vdirsyncer
 #https://github.com/pimutils/khal
-pipsi install --python python3 khal
+pipsi install khal
 #https://github.com/scheibler/khard
-pipsi install --python python3 khard
+pipsi install khard
 #https://github.com/pimutils/todoman
-pipsi install --python python3 todoman
+pipsi install todoman
 echo "configured mail and cal setup"
 
 
