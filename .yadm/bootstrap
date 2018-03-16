@@ -1,33 +1,9 @@
 #!/bin/sh
 
-#check installed software
-which git
+for PROGRAM in git zsh vim ssh-agent virtualenv i3 i3lock ranger curl wget cmus
+do which $PROGRAM || echo "$PROGRAM not installed"
+done
 
-which zsh
-
-which vim
-
-which ssh-agent
-
-#TODO automate install
-which virtualenv 
-
-which i3
-which i3lock
-
-which ranger
-
-#TODO automate install
-which pip
-
-#TODO rethink if needed here
-which pipsi
-
-#TODO use either _wget_ or _curl_ !
-which curl
-which wget
-
-which cmus
 
 #basic setup
 #ssh setup
