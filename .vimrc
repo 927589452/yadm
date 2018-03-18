@@ -33,6 +33,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "
 "   " Unmanaged plugin (manually installed and updated)
 "   Plug '~/my-prototype-plugin'
+
+Plug 'dhruvasagar/vim-table-mode'
+
 "
 Plug 'vim-scripts/c.vim'
 
@@ -75,7 +78,7 @@ inoremap wj <Esc>
 inoremap <C-s> <Esc>:w!<Enter>i
 nnoremap <C-s> :w!<Enter>
 "Spell-check set to F7
-map <F7> :setlocal spell! spelllang=en_us<CR>
+map <F7> :setlocal spell! spelllang=de_DE<CR>
 """END
 
 
@@ -136,7 +139,8 @@ autocmd FileType tex inoremap ;nota \begin{nota}[<Space>(<>)]<Enter>(<>)<Esc>2ki
 
 
 """Logical Symbols
-autocmd FileType tex inoremap ;m $$<Space>(<>)<Esc>2T$i
+"autocmd FileType tex inoremap ;m $$<Space>(<>)<Esc>2T$i
+autocmd FileType tex inoremap ;m \begin{math}<Enter>
 autocmd FileType tex inoremap ;M $$<Esc>i
 autocmd FileType tex inoremap ;neg {\neg}
 autocmd FileType tex inoremap ;V {\vee}
@@ -180,3 +184,12 @@ au BufWinEnter * silent loadview
 
 """vimtex
 let g:vimtex_view_method = 'mupdf'
+
+""https://stackoverflow.com/questions/526858/how-do-i-make-vim-do-normal-bash-like-tab-completion-for-file-names#526940
+set wildmode=longest,list,full
+set wildmenu
+
+"https://stackoverflow.com/questions/2600783/how-does-the-vim-write-with-sudo-trick-work
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+"

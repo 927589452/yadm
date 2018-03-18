@@ -1,11 +1,78 @@
 #!/bin/sh
 
-$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)
+for PROGRAM in git zsh vim ssh-agent virtualenv i3 i3lock ranger curl wget cmus
+do which $PROGRAM || echo "$PROGRAM not installed"
+done
 
-curl -fLo .vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+#basic setup
+#ssh setup
+mkdir -p .ssh/control
+#make find -type D -empty -exec rmdir {} ';' not match the socket directory
+touch .ssh/control/.donotdelete
+find ~/.ssh/id_$(hostname) || ssh-keygen -f ~/.ssh/id_$(hostname)
+#yadm setup
+#find a common location for git installs
+git clone https://github.com/TheLocehiliosan/yadm.git ~/.yadm-project
+ls ~/bin >/dev/null || mkdir ~/bin
+PATH
+ln -s ~/.yadm-project/yadm ~/bin/yadm
+yadm clone https://github.com/927589452/yadm 
+yadm remote set-url --push ssh://git@github.com/927589452/yadm.git origin
+
+
+
+#configure zsh 
+export tmp=$RANDOM
+mv ~/.zshrc ~/zshrc.$tmp
+echo "Created temporary copy of the zshrc"
+git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh && echo "Cloned oh-my-zsh successfully" || echo "Cloning oh-my-zsh was unsuccessfull"	
+mv ~/zshrc.$tmp ~/.zshrc 
+echo "Moved zshrc back in place"
+
+#configure vimplug
+curl -fLo .vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && echo "vimplug installed
+Open a new terminal
+run vim
+:PlugInstall
+:PlugUpdate
+:PlugUpgrade
+
+press enter when vim plugins have been installed"
+read $RANDOM
+
+#Clone Projects from internal git and where exists add git{hub|lab} as a remote
 mkdir -p ~/Development 
-cd Development
-git clone https://github.com/927589452/cprogramming.git
+cd Development && git clone https://github.com/927589452/cprogramming.git
 
 
+#configure i3 dependencies
+mdkir ~/bin
+cd ~ && git clone git://github.com/tobi-wan-kenobi/bumblebee-status 
+ln -s ~/bumblebee-status/bumblebee-status ~/bin/bumblebee-status
+
+#install pipsi
+pip install --upgrade pip
+pip install --user --ignore-installed pipsi
+pip install --upgrade --user pipsi
+
+#mail cal addresses
+#https://github.com/pimutils/vdirsyncer
+pipsi install vdirsyncer
+#https://github.com/pimutils/khal
+pipsi install khal
+#https://github.com/scheibler/khard
+pipsi install khard
+#https://github.com/pimutils/todoman
+pipsi install todoman
+echo "configured mail and cal setup"
+
+
+
+#configure offlineimap
+
+#configure ranger
+
+#copy defaults
+
+#link scripts

@@ -1,6 +1,6 @@
 [global_config]
+  enabled_plugins = InactivityWatch, ActivityWatch, TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   broadcast_default = off
-  enabled_plugins = TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   geometry_hinting = True
 [keybindings]
   broadcast_all = None
@@ -24,3 +24,7 @@
     scrollback_lines = 5000
     use_system_font = False
     visible_bell = True
+    background_color = "#002b36"
+    background_image = None
+    foreground_color = "#839496"
+    scrollback_infinite = True
