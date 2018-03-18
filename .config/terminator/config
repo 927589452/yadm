@@ -1,0 +1,26 @@
+[global_config]
+  broadcast_default = off
+  enabled_plugins = TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  geometry_hinting = True
+[keybindings]
+  broadcast_all = None
+  broadcast_group = None
+  broadcast_off = None
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    audible_bell = True
+    copy_on_selection = True
+    cursor_color = "#aaaaaa"
+    font = Monospace 10
+    scrollback_lines = 5000
+    use_system_font = False
+    visible_bell = True
