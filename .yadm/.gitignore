@@ -1,0 +1,5 @@
+~/.vim/autoload/plug.vim
+~/.oh-my-zsh
+~/.config/ranger/history
+~/.cache/*
+~/scripts/lockscreen.png
