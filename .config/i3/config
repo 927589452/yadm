@@ -235,7 +235,7 @@ bar {
 	font pango:Inconsolata 7
 	position top
 	tray_output none
-	status_command ~/bin/bumblebee-status  -m cmus brightness nic traffic disk:root cpu memory battery weather date time pasink pasource pacman -p time.format="%H:%M CW %V" date.format="%a, %b %d %Y" -t solarized-powerline -f /dev/null -d
+	status_command ~/bin/bumblebee-status  -m cmus brightness nic traffic disk:root cpu battery weather date time pasink pasource pacman -p time.format="%H:%M CW %V" date.format="%a, %b %d %Y" -t solarized-powerline -f /dev/null -d
 }
 
 
