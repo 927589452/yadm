@@ -18,7 +18,8 @@ ls ~/bin >/dev/null || mkdir ~/bin
 PATH
 ln -s ~/.yadm-project/yadm ~/bin/yadm
 yadm clone https://github.com/927589452/yadm 
-yadm remote set-url --push ssh://git@github.com/927589452/yadm.git origin
+yadm remote set-url origin https://github.com/927589452/yadm.git
+yadm remote set-url --push origin ssh://git@github.com/927589452/yadm.git
 
 
 
