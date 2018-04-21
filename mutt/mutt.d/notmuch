@@ -1,0 +1,21 @@
+    macro index <F11> "<enter-command>unset wait_key<enter><enter-command>unignore message-id\
+      <enter><pipe-message>mutt-notmuch thread<enter><change-folder-readonly>~/.cache/mutt_results\
+      <enter><enter-command>set wait_key<enter>" "search and reconstruct owning thread (using notmuch)"
+# 'L' performs a notmuch query, showing only the results
+macro index <L> "<enter-command>unset wait_key<enter><shell-escape>read -p 'notmuch query: ' x; echo \$x >~/.cache/mutt_terms<enter><limit>~i \"\`notmuch search --output=messages \$(cat ~/.cache/mutt_terms) | head -n 600 | perl -le '@a=<>;chomp@a;s/\^id:// for@a;$,=\"|\";print@a'\`\"<enter>" "show only messages matching a notmuch pattern"
+# 'a' shows all messages again (supersedes default <alias> binding)
+macro index a "<limit>all\n" "show all messages (undo limit)"
+
+#    virtual-mailboxes \
+#        "INBOX"     "notmuch://?query=tag:INBOX and NOT tag:archive"\
+#        "Unread"    "notmuch://?query=tag:unread"\
+#        "Starred"   "notmuch://?query=tag:*"\
+#        "Sent"      "notmuch://?query=tag:sent"        # sets up queries for virtual folders
+    # notmuch bindings
+    macro index \\\\ "<vfolder-from-query>"              # looks up a hand made query
+    macro index A "<modify-labels>+archive -unread -inbox\\n"        # tag as Archived
+    macro index I "<modify-labels>-inbox -unread\\n"                 # removed from inbox
+    macro index S "<modify-labels-then-hide>-inbox -unread +junk\\n" # tag as Junk mail
+    macro index + "<modify-labels>+*\\n<sync-mailbox>"               # tag as starred
+    macro index - "<modify-labels>-*\\n<sync-mailbox>"               # tag as unstarred
+

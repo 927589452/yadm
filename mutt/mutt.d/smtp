@@ -1,0 +1,2 @@
+set sendmail_wait= -1 #push smtp to background
+set sendmail="$HOME/mutt/bin/msmtp-enqueue.sh -C $HOME/.msmtprc "

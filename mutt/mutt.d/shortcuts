@@ -1,0 +1,18 @@
+#shortcuts
+bind pager j next-line
+bind pager k previous-line
+bind attach,index,pager \CD next-page
+bind attach,index,pager \CU previous-page
+bind pager g top
+bind pager G bottom
+bind attach,index g first-entry
+bind attach,index G last-entry
+#lock down drub cmd
+#bind generic,alias,attach,browser,editor,index,compose,pager,pgp,postpone ':' noop
+
+
+#open links with urlview
+ macro pager \cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+
+macro index ^ '<enter-command>~/mutt/bin/msmtp-runqueue.sh'<enter> 'Force Mail Send'
+

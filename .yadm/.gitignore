@@ -3,3 +3,6 @@
 ~/.config/ranger/history
 ~/.cache/*
 ~/scripts/lockscreen.png
+~/mutt/mutt.d/aliases
+~/mutt/mutt.d/importedcerts
+

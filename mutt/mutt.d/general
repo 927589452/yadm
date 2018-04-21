@@ -1,0 +1,33 @@
+## General options
+set header_cache = "$HOME/.cache/mutt"
+set imap_check_subscribed
+set imap_keepalive = 11
+set imap_passive
+set mail_check = 6
+set mbox_type=Maildir
+
+#encoding
+set send_charset="utf-8"
+
+## subject line for forwarded messages
+set forward_format="Fwd: %s"
+## Don't decode MIME messages to text/plain when forwarding
+set forward_decode=no
+# forward including attachments
+set mime_forward=yes 
+set mime_forward_rest=yes
+
+# auto cc self
+set metoo
+
+# fast and not annoying reply
+set fast_reply=yes
+set include=yes
+
+# don't wait for colors
+set sleep_time=0
+
+# show mail list above pager
+set pager_index_lines=10
+
+

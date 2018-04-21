@@ -1,0 +1,7 @@
+
+text/html; elinks -dump ; copiousoutput;
+image/gif; open -a Preview %s
+image/jpg; open Preview %s; needsterminal; description=JPEG Image; nametemplate=%s.jpg
+image/jpeg; open  Preview %s; needsterminal; description=JPEG Image; nametemplate=%s.jpg
+application/pdf; open -a Preview '%s' -; copiousoutput
+
