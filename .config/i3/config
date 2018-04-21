@@ -252,13 +252,6 @@ bindsym Ctrl+Shift+d  exec sudo /usr/local/sbin/lcd_bright.sh D 10
 ##personal autostart
 exec_always .dotfiles/i3/wallpaper.sh
 exec_always redshift -l  50.01:8.47  
-exec chrome
-exec chromium-browser
-exec firefox
-exec google-chrome-stable
-exec firefox -no-remote -profile 'sports'
-exec firefox -no-remote -profile 'crafts'
-exec firefox -no-remote -profile 'default'
 exec mate-power-manager
 exec mate-volume-control-applet
 exec blueman-assistant
