@@ -5,6 +5,11 @@
 .ssh/config
 .gitconfig
 .mutt/*
+mutt/*
+#more granular mutt configs
+mutt/mutt.d/aliases
+mutt/mutt.d/importedcerts
+
 #sync calendars and contacts
 .config/vdirsyncer/config
 #send mail
