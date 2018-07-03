@@ -140,6 +140,8 @@ autocmd FileType tex inoremap ;nota \begin{nota}[<Space>(<>)]<Enter>(<>)<Esc>2ki
 
 """Logical Symbols
 "autocmd FileType tex inoremap ;m $$<Space>(<>)<Esc>2T$i
+autocmd FileType tex inoremap ;eqn \begin{equation}<Enter>
+autocmd FileType tex inoremap ;eqna \begin{eqnarray}<Enter>
 autocmd FileType tex inoremap ;m \begin{math}<Enter>
 autocmd FileType tex inoremap ;M $$<Esc>i
 autocmd FileType tex inoremap ;neg {\neg}
@@ -192,4 +194,6 @@ set wildmenu
 "https://stackoverflow.com/questions/2600783/how-does-the-vim-write-with-sudo-trick-work
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
-"
+
+"Undodir according to https://jovicailic.org/2017/04/vim-persistent-undo/
+set undodir=~/.vim/undodir
