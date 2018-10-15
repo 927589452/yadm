@@ -90,6 +90,7 @@ export XKB_DEFAULT_OPTIONS=grp:alt_shift_toggle,
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vi="vim"
+alias alias fortune="curl --silent --url https://api.ef.gy/fortune"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
