@@ -57,6 +57,17 @@ Plug 'chrisbra/Recover.vim'
 
 Plug 'jreybert/vimagit'
 
+"realpython
+Plug 'Valloric/YouCompleteMe'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'nvie/vim-flake8'
+Plug 'vim-syntastic/syntastic'
+Plug 'jistr/vim-nerdtree-tabs'
+
+
+
+"Plug 'vim-scripts/VimIRC.vim'
+Plug 'welle/targets'
 "   " Initialize plugin system
 call plug#end()
 "
@@ -73,7 +84,7 @@ set tabstop=8
 "http://is.gd/IBV2013
 highlight ColorColumn ctermbg=magenta
 "set colorcolumn=81
-call matchadd('ColorColumn', '\%81v', 100) 
+call matchadd('ColorColumn', '\%81v', 100)
 
 "http://www.lukesmith.xyz/conf/.vimrc
 set number
@@ -285,3 +296,31 @@ let g:matchup_override_vimtex = 1
 match ErrorMsg '\s\+$'
 "remove trailing whitespace automtically
 autocmd BufWritePre * :%s/\s\+$//e
+
+
+"https://realpython.com/vim-and-python-a-match-made-in-heaven/
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+
+""python with virtualenv support
+"py << EOF
+"import os
+"import sys
+"if 'VIRTUAL_ENV' in os.environ:
+    "project_base_dir = os.environ['VIRTUAL_ENV']
+    "activate_this = os.path.join(project_base_dir,
+    "'bin/activate_this.py')
+    "execfile(activate_this, dict(__file__=activate_this))
+"EOF
+"
