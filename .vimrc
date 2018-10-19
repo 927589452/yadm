@@ -265,8 +265,8 @@ set statusline+=%l/%L	"cursor line/total line
 set statusline+=\ %P	"percent through file
 
 "centralized swap files
-set directory=$HOME/.vim/swp//
-set backupdir=$HOME/.vim/backup//
+set directory=$HOME/.vim/swp/
+set backupdir=$HOME/.vim/backup/
 
 "longterm undo
 set undofile
@@ -324,3 +324,10 @@ au BufNewFile,BufRead *.js, *.html, *.css
     "execfile(activate_this, dict(__file__=activate_this))
 "EOF
 "
+
+
+" Skeleton files
+"autocmd BufNewFile *.html 0r ~/.vim/templates/html.tpl
+"autocmd BufNewFile *.html 0r ~/.vim/templates/html.tpl
+:autocmd BufNewFile letter_*.tex 0r ~/.vim/templates/letter.tpl
+
