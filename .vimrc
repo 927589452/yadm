@@ -1,3 +1,7 @@
+"mastering vim quickly
+set nocompatible
+
+
 call plug#begin('~/.vim/plugged')
 "
 "   " Make sure you use single quotes
@@ -39,14 +43,26 @@ Plug 'dhruvasagar/vim-table-mode'
 "
 Plug 'vim-scripts/c.vim'
 
+"Todo management
+Plug 'freitass/todo.txt-vim'
+
+"Unicode search and  completion
+Plug 'chrisbra/unicode.vim'
+"
+"enhanced whitespace highlighting
+Plug 'ntpeters/vim-better-whitespace'
+
+"better recovery
+Plug 'chrisbra/Recover.vim'
 
 Plug 'jreybert/vimagit'
+
 "   " Initialize plugin system
 call plug#end()
 "
 
 
-"hightlitg hint add spectial chars
+"highlight hint add special chars
 set listchars=nbsp:¬,eol:¶,tab:>-,extends:»,precedes:«,trail:•
 set list
 "indentation
@@ -66,10 +82,10 @@ set so=10
 
 """BASIC TOOLS
 "Navigating with guides
-inoremap <Space><Space> <Esc>/(<>)<Enter>"_c4l
-"inoremap <Space><Backspace> (<>)<Esc>/(<>)<Enter>"_c4l
-vnoremap <Space><Space> <Esc>/(<>)<Enter>"_c4l
-map <Space><Space> <Esc>/(<>)<Enter>"_c4l
+inoremap <Space><<Space><Space> <Esc>/(<>)<Enter>"_c4l
+"inoremap <Space><Space><<Backspace> (<>)<Esc>/(<>)<Enter>"_c4l
+vnoremap <Space><<Space><Space> <Esc>/(<>)<Enter>"_c4l
+map <Space><<Space><Space> <Esc>/(<>)<Enter>"_c4l
 inoremap ;gui (<>)
 "For normal mode when in terminals (in X I have caps mapped to esc, this replaces it when I don't have X)
 inoremap jw <Esc>
@@ -140,6 +156,8 @@ autocmd FileType tex inoremap ;nota \begin{nota}[<Space>(<>)]<Enter>(<>)<Esc>2ki
 
 """Logical Symbols
 "autocmd FileType tex inoremap ;m $$<Space>(<>)<Esc>2T$i
+autocmd FileType tex inoremap ;eqn \begin{equation}<Enter>
+autocmd FileType tex inoremap ;eqna \begin{eqnarray}<Enter>
 autocmd FileType tex inoremap ;m \begin{math}<Enter>
 autocmd FileType tex inoremap ;M $$<Esc>i
 autocmd FileType tex inoremap ;neg {\neg}
@@ -192,4 +210,78 @@ set wildmenu
 "https://stackoverflow.com/questions/2600783/how-does-the-vim-write-with-sudo-trick-work
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
+
+"Undodir according to https://jovicailic.org/2017/04/vim-persistent-undo/
+set undodir=~/.vim/undodir
+
+" mastering vim quickly 12
+" enable project specific vimrc
+set exrc
+
+"mastering vim quickly vim explorer
+let g:netrw_browse_split = 4
+"need to tweak the following
+let g:netrw_liststyle = 3
+let g:netrw_winsize = 20
+
 "
+set backspace=indent,eol,start
+set history=1000
+set showcmd
+set showmode
+set ruler
+set visualbell
+set tabpagemax=40
+
+"scroll offset
+set scrolloff=3
+set sidescrolloff=5
+
+"spelling
+set spell
+set spelllang=de_de,en_us,en_gb,de,en,tex,medical,math,de_med,en_med,eo
+
+"show  statusline
+set laststatus=2
+set statusline=%t	"tail of filename
+set statusline+=%{&ff}	"file format
+set statusline+=%h	"help file flag
+set statusline+=%m	"modified flag
+set statusline+=%r	"read only flag
+set statusline+=%y	"file type
+set statusline+=%c	"cursor column
+set statusline+=%l/%L	"cursor line/total line
+set statusline+=\ %P	"percent through file
+
+"centralized swap files
+set directory=$HOME/.vim/swp//
+set backupdir=$HOME/.vim/backup//
+
+"longterm undo
+set undofile
+set undodir=$HOME/.vim/undodir
+
+"show folds
+set foldcolumn=4
+
+"LateX tweaks
+"https://wiki.ubuntuusers.de/VIM/Tipps/
+let g:Tex_CompileRule_pdf = 'mkdir -p out && pdflatex -output-directory=out -interaction=nonstopmode $* && mv out/$*.pdf .'
+filetype plugin on
+filetype indent on
+au BufEnter *.tex set autowrite
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_MultipleCompileFormats = 'pdf'
+"let g:Tex_CompileRule_pdf = 'pdflatex -interaction=nonstopmode $*'
+let g:Tex_GotoError = 0
+let g:Tex_ViewRule_pdf = 'evince'
+
+
+"Latex stuff
+
+let g:matchup_override_vimtex = 1
+
+"Highlight Trailing Whitespace
+match ErrorMsg '\s\+$'
+"remove trailing whitespace automtically
+autocmd BufWritePre * :%s/\s\+$//e
