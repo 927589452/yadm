@@ -64,6 +64,8 @@ export PATH="$HOME/scripts:$HOME/bin:$HOME/.local/bin:$PATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+export HIST_IGNORE_ALL_DUPS="true"
+export HIST_IGNORE_SPACE="true"
 
 # Preferred editor for local and remote sessions
  if [[ -n $SSH_CONNECTION ]]; then
